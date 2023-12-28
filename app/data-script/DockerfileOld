@@ -1,0 +1,6 @@
+FROM alpine
+WORKDIR /opt
+RUN apk update && apk upgrade
+RUN apk add mysql-client
+COPY . .
+CMD ["/bin/sh", "import.sh"]
